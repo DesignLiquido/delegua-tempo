@@ -1,0 +1,1 @@
+# Biblioteca para manipulação de tempo para Delégua e JavaScript

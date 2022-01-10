@@ -1,0 +1,30 @@
+{
+  "name": "@designliquido/delegua-tempo",
+  "version": "0.0.0",
+  "description": "Biblioteca de manejo de tempo em português, para JavaScript e Delégua",
+  "scripts": {
+    "empacotar": "rm -Rf ./dist && tsc && copyfiles -V ./package.json ./dist && copyfiles -V ./README.md ./dist",
+    "npm-publish": "npm publish --access public",
+    "testes-unitarios": "jest",
+    "release": "release-it"
+  },
+  "keywords": [
+    "egua",
+    "delegua"
+  ],
+  "author": "Leonel Sanches da Silva",
+  "contributors": [
+    {
+      "name": "Leonel Sanches da Silva",
+      "url": "https://www.linkedin.com/in/leonelsanchesdasilva/"
+    },
+    {
+      "name": "Samuel Renan Gonçalves Vaz",
+      "url": "https://www.linkedin.com/in/samuel-renan-gon%C3%A7alves-vaz-b6b83a103/"
+    }
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
