@@ -48,7 +48,7 @@ export function textoParaData(dataComoTexto: string): Date {
 
   if (typeof dataComoTexto !== "string" || !regex.test(dataComoTexto)) {
     throw new TempoErroEmTempoDeExecucao(
-      this.token,
+      null, //TODO: this.simbolo,
       "O parâmetro passado deve ser um texto com a data no formato DD/MM/AAAA. Ex: '01/01/2014'"
     );
   }
