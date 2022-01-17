@@ -1,11 +1,12 @@
 {
-    "compilerOptions": {
-        "outDir": "dist",
-        "module": "commonjs",
-        "target": "ES5",
-        "rootDir": ".",
-        "allowJs": true,
-        "sourceMap": true
-    },
-    "exclude": ["babel.config.js", "dist/**/*"]
+  "compilerOptions": {
+    "outDir": "dist",
+    "module": "commonjs",
+    "target": "es2017",
+    "rootDir": ".",
+    "allowJs": true,
+    "sourceMap": true
+  },
+  "exclude": ["babel.config.js", "dist/**/*"],
+  "lib": ["es2017", "dom"]
 }
