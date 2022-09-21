@@ -4,9 +4,8 @@
   "description": "Biblioteca de manejo de tempo em português, para JavaScript e Delégua",
   "scripts": {
     "empacotar": "rm -Rf ./dist && tsc && copyfiles -V ./README.md ./dist",
-    "npm-publish": "npm publish --access public",
-    "testes-unitarios": "jest --coverage",
-    "release": "release-it"
+    "publicar-npm": "npm publish --access public",
+    "testes-unitarios": "jest --coverage"
   },
   "keywords": [
     "egua",
