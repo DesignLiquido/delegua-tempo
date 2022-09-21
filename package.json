@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Biblioteca de manejo de tempo em português, para JavaScript e Delégua",
   "scripts": {
-    "empacotar": "rm -Rf ./dist && tsc && copyfiles -V ./package.json ./dist && copyfiles -V ./README.md ./dist",
+    "empacotar": "rm -Rf ./dist && tsc && copyfiles -V ./README.md ./dist",
     "npm-publish": "npm publish --access public",
     "testes-unitarios": "jest --coverage",
     "release": "release-it"
@@ -24,6 +24,9 @@
     }
   ],
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-typescript": "^7.16.7",
