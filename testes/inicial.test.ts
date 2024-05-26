@@ -1,10 +1,4 @@
-import { tempo, horas, minutos, segundos } from '../index';
-
-describe('Função tempo()', () => {
-    test('Uso trivial', () => {
-        expect(tempo()).toBeTruthy();
-    });
-});
+import { horas, minutos, segundos, tempo, textoParaData } from '../index';
 
 describe('Função horas()', () => {
     test('Uso trivial', () => {
@@ -21,5 +15,23 @@ describe('Função minutos()', () => {
 describe('Função segundos()', () => {
     test('Uso trivial', () => {
         expect(segundos()).toBeTruthy();
+    });
+});
+
+describe('Função tempo()', () => {
+    test('Uso trivial', () => {
+        expect(tempo()).toBeTruthy();
+    });
+});
+
+describe('Função textoParaData()', () => {
+    test('Uso trivial', () => {
+        const dataIso = textoParaData('26/05/2024');
+        expect(dataIso).toBeTruthy();
+        expect(dataIso).toBeInstanceOf(Date);
+    });
+
+    test('Data vazia', () => {
+        expect(() => textoParaData('')).toThrowError();
     });
 });
