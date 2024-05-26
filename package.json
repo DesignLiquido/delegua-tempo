@@ -3,13 +3,16 @@
   "version": "0.0.1",
   "description": "Biblioteca de manejo de tempo em português, para JavaScript e Delégua",
   "scripts": {
-    "empacotar": "rm -Rf ./dist && tsc && copyfiles -V ./README.md ./dist",
+    "empacotar": "yarn rimraf ./dist && tsc && yarn copyfiles -V ./README.md ./dist",
     "publicar-npm": "npm publish --access public",
     "testes-unitarios": "jest --coverage"
   },
   "keywords": [
     "egua",
-    "delegua"
+    "delegua",
+    "tempo",
+    "datas",
+    "horas"
   ],
   "author": "Leonel Sanches da Silva",
   "contributors": [
@@ -30,7 +33,9 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-typescript": "^7.16.7",
     "@types/jest": "^27.4.0",
+    "copyfiles": "^2.4.1",
     "jest": "^27.4.7",
+    "rimraf": "^5.0.7",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   }

@@ -5,8 +5,15 @@
     "target": "es2017",
     "rootDir": ".",
     "allowJs": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "declaration": true,
+    "esModuleInterop": true
   },
-  "exclude": ["babel.config.js", "dist/**/*"],
+  "exclude": [
+    "babel.config.js", 
+    "dist/**/*", 
+    "jest.config.ts",
+    "testes/**/*"
+  ],
   "lib": ["es2017", "dom"]
 }
