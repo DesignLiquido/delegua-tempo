@@ -30,10 +30,11 @@ export function horas(): number {
 
 /**
  * Retorna uma instância de Date do JavaScript da data passada por parâmetro, no formato DD/MM/AAAA.
+ * @param {any} _ O visitante da instrução, normalmente um interpretador.
  * @param {string} dataComoTexto A data a ser convertida como texto, no formato DD/MM/AAAA.
  * @returns A data como um objeto Date to JavaScript.
  */
-export function textoParaData(dataComoTexto: string): Date {
+export function textoParaData(_: any, dataComoTexto: string): Date {
   const regex = /^(0[1-9]|[12][0-9]|3[01])[/](0[1-9]|1[012])[/](19|20)\d\d$/;
 
   if (typeof dataComoTexto !== "string" || !regex.test(dataComoTexto)) {

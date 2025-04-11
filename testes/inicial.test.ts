@@ -26,12 +26,12 @@ describe('Função tempo()', () => {
 
 describe('Função textoParaData()', () => {
     test('Uso trivial', () => {
-        const dataIso = textoParaData('26/05/2024');
+        const dataIso = textoParaData(undefined, '26/05/2024');
         expect(dataIso).toBeTruthy();
         expect(dataIso).toBeInstanceOf(Date);
     });
 
     test('Data vazia', () => {
-        expect(() => textoParaData('')).toThrowError();
+        expect(() => textoParaData(undefined, '')).toThrowError();
     });
 });
