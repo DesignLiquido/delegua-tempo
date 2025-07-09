@@ -1,5 +1,17 @@
-import { agora, horas, minutos, segundos, tempo, textoIso8601ParaData, textoParaData } from '../index';
+import { agora, carimboDeTempoUnix, carimboDeTempoUnixParaData, diaDaSemana, horas, milissegundos, minutos, segundos, semanaDoAno, tempo, textoIso8601ParaData, textoParaData } from '../index';
 import { ObjetoData } from '../objeto-data';
+
+describe('Função diaDaSemana()', () => {
+    test('Uso trivial', () => {
+        expect(diaDaSemana()).toBeTruthy();
+    });
+});
+
+describe('Função semanaDoAno()', () => {
+    test('Uso trivial', () => {
+        expect(semanaDoAno()).toBeTruthy();
+    });
+});
 
 describe('Função horas()', () => {
     test('Uso trivial', () => {
@@ -16,6 +28,29 @@ describe('Função minutos()', () => {
 describe('Função segundos()', () => {
     test('Uso trivial', () => {
         expect(segundos()).toBeTruthy();
+    });
+});
+
+describe('Função milissegundos()', () => {
+    test('Uso trivial', () => {
+        expect(milissegundos()).toBeTruthy();
+    });
+});
+
+describe('Função carimboDeTempoUnix()', () => {
+    test('Uso trivial', () => {
+        expect(carimboDeTempoUnix()).toBeTruthy();
+    });
+});
+
+describe('Função carimboDeTempoUnixParaData()', () => {
+    test('Uso trivial', () => {
+        const dataResolvida = carimboDeTempoUnixParaData(undefined, 1716706800);
+        expect(dataResolvida).toBeTruthy();
+        expect(dataResolvida).toBeInstanceOf(ObjetoData);
+        expect(dataResolvida.dia).toBe(26);
+        expect(dataResolvida.mes).toBe(5);
+        expect(dataResolvida.ano).toBe(2024);
     });
 });
 
@@ -69,5 +104,11 @@ describe('Função textoParaData()', () => {
 
     test('Data vazia', () => {
         expect(() => textoParaData(undefined, '')).toThrow();
+    });
+});
+
+describe('Função textoIso8601ParaData()', () => {
+    test('Data vazia', () => {
+        expect(() => textoIso8601ParaData(undefined, '')).toThrow();
     });
 });
