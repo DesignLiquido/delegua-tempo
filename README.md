@@ -13,3 +13,15 @@ var tempo = importar('tempo')
 ## Arquitetura interna
 
 `delegua-tempo` utiliza [Day.js](https://day.js.org) para implementação de recursos internos. O objeto de datas da Day.js é bem mais robusto que o objeto `Date` correspondente do JavaScript, com capacidades para trabalhar com fusos horários, conversão de datas, semanas, e assim por diante.
+
+Esta biblioteca expõe um objeto especial chamado `ObjetoData`. Este objeto encapsula certas propriedades e funções de objetos da Day.js, e pode também ser utilizada para entender como fazer determinadas operações, principalmente em operações de data e usos com fusos horários.
+
+## Modo de uso
+
+Usando [a solução Delégua com todas as bibliotecas](https://github.com/DesignLiquido/delegua-completo), ou ainda usando [Delégua Web](https://designliquido.github.io/delegua-web), importe a biblioteca e use-a da seguinte forma:
+
+```js
+var tempo = importar('tempo')
+var agora = tempo.agora()
+escreva(agora)
+```
