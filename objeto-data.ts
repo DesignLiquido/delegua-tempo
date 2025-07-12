@@ -1,7 +1,8 @@
 import * as dayjs from 'dayjs';
-import 'dayjs/locale/pt-br';
+import 'dayjs/locale/pt';
 
 import customParseFormat from "dayjs/plugin/customParseFormat";
+import localizedFormat from "dayjs/plugin/localizedFormat";
 import quarterOfYear from "dayjs/plugin/quarterOfYear";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
@@ -9,11 +10,14 @@ import weekYear from "dayjs/plugin/weekYear";
 import weekOfYear from "dayjs/plugin/weekOfYear";
 
 dayjs.extend(customParseFormat);
+dayjs.extend(localizedFormat);
 dayjs.extend(quarterOfYear);
 dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.extend(weekYear);
 dayjs.extend(weekOfYear);
+
+dayjs.locale('pt');
 
 export class ObjetoData {
     constructor(private estruturaInterna: dayjs.Dayjs) {
@@ -179,5 +183,17 @@ export class ObjetoData {
     subtrairMilissegundos(milissegundos: number): ObjetoData {
         const novaData = this.estruturaInterna.subtract(milissegundos, 'millisecond');
         return new ObjetoData(novaData);
+    }
+
+    paraTexto(): string {
+        return this.toString();
+    }
+
+    porExtenso(): string {
+        return this.estruturaInterna.format('LLLL');
+    }
+
+    toString(): string {
+        return `<objeto-data dia=${this.dia} mês=${this.mes} ano=${this.ano} hora=${this.hora} minuto=${this.minuto} segundo=${this.segundo}>`;
     }
 }

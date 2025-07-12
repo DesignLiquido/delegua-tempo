@@ -1,5 +1,6 @@
 import * as dayjs from 'dayjs';
 import 'dayjs/locale/pt-br';
+
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import weekYear from "dayjs/plugin/weekYear";
 import weekOfYear from "dayjs/plugin/weekOfYear";
@@ -10,6 +11,8 @@ import { ObjetoData } from './objeto-data';
 dayjs.extend(customParseFormat);
 dayjs.extend(weekYear);
 dayjs.extend(weekOfYear);
+
+dayjs.locale('pt');
 
 /**
  * Retorna uma data completa.

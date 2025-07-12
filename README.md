@@ -23,5 +23,19 @@ Usando [a solução Delégua com todas as bibliotecas](https://github.com/Design
 ```js
 var tempo = importar('tempo')
 var agora = tempo.agora()
-escreva(agora)
+escreva(agora) // Escreve algo como: <objeto-data dia=... mês=... >
+```
+
+Neste exemplo, a variável `agora` é um objeto de data com as seguintes propriedades:
+
+```js
+escreva(agora.dia) // Escreve o dia na saída padrão
+escreva(agora.mes) // Escreve o mês na saída padrão
+escreva(agora.ano) // Escreve o ano na saída padrão
+escreva(agora.hora) // Escreve a hora na saída padrão
+escreva(agora.minuto) // Escreve o minuto na saída padrão
+escreva(agora.segundo) // Escreve o segundo na saída padrão
+escreva(agora.milissegundo) // Escreve o milissegundo na saída padrão
+escreva(agora.diaDaSemana) // Escreve o dia da semana na saída padrão
+escreva(agora.semanaDoAno) // Escreve a semana do ano na saída padrão
 ```

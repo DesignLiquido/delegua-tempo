@@ -1,3 +1,5 @@
+import { expectTypeOf } from 'expect-type';
+
 import { textoIso8601ParaData, textoParaData } from "..";
 import { ObjetoData } from "../objeto-data";
 
@@ -31,6 +33,20 @@ describe('ObjetoData', () => {
 
         it('carimboDeTempoUnix', () => {
             expect(objetoReferencia.carimboDeTempoUnix).toBe(1716706800);
+        });
+
+        describe('Métodos de exibição', () => {
+            it('paraTexto', () => {
+                const testeParaTexto = objetoReferencia.paraTexto();
+                expectTypeOf(testeParaTexto).toBeString();
+                expect(testeParaTexto).toBe('<objeto-data dia=26 mês=5 ano=2024 hora=0 minuto=0 segundo=0>');
+            });
+
+            it('porExtenso', () => {
+                const testePorExtenso = objetoReferencia.porExtenso();
+                expectTypeOf(testePorExtenso).toBeString();
+                expect(testePorExtenso).toBe('domingo, 26 de maio de 2024 às 00:00');
+            });
         });
 
         describe("Fusos horários", () => {
