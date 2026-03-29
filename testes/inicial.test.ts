@@ -1,39 +1,51 @@
-import { agora, carimboDeTempoUnix, carimboDeTempoUnixParaData, diaDaSemana, horas, milissegundos, minutos, segundos, semanaDoAno, tempo, textoIso8601ParaData, textoParaData } from '../index';
-import { ObjetoData } from '../objeto-data';
+import { agora, carimboDeTempoUnix, carimboDeTempoUnixParaData, diaDaSemana, horas, milissegundos, minutos, segundos, semanaDoAno, tempo, textoIso8601ParaData, textoParaData } from '../fontes';
+import { ObjetoData } from '../fontes/objeto-data';
 
 describe('Função diaDaSemana()', () => {
     test('Uso trivial', () => {
-        expect(diaDaSemana()).toBeTruthy();
+        const valor = diaDaSemana();
+        expect(valor).toBeGreaterThanOrEqual(0);
+        expect(valor).toBeLessThanOrEqual(6);
     });
 });
 
 describe('Função semanaDoAno()', () => {
     test('Uso trivial', () => {
-        expect(semanaDoAno()).toBeTruthy();
+        const valor = semanaDoAno();
+        expect(valor).toBeGreaterThanOrEqual(1);
+        expect(valor).toBeLessThanOrEqual(53);
     });
 });
 
 describe('Função horas()', () => {
     test('Uso trivial', () => {
-        expect(horas()).toBeTruthy();
+        const valor = horas();
+        expect(valor).toBeGreaterThanOrEqual(0);
+        expect(valor).toBeLessThanOrEqual(23);
     });
 });
 
 describe('Função minutos()', () => {
     test('Uso trivial', () => {
-        expect(minutos()).toBeTruthy();
+        const valor = minutos();
+        expect(valor).toBeGreaterThanOrEqual(0);
+        expect(valor).toBeLessThanOrEqual(59);
     });
 });
 
 describe('Função segundos()', () => {
     test('Uso trivial', () => {
-        expect(segundos()).toBeTruthy();
+        const valor = segundos();
+        expect(valor).toBeGreaterThanOrEqual(0);
+        expect(valor).toBeLessThanOrEqual(59);
     });
 });
 
 describe('Função milissegundos()', () => {
     test('Uso trivial', () => {
-        expect(milissegundos()).toBeTruthy();
+        const valor = milissegundos();
+        expect(valor).toBeGreaterThanOrEqual(0);
+        expect(valor).toBeLessThanOrEqual(999);
     });
 });
 

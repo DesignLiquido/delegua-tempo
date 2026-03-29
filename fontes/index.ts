@@ -85,7 +85,7 @@ export function diaDaSemana(): number {
 }
 
 export function semanaDoAno(): number {
-  return dayjs.default().weekYear();
+  return dayjs.default().week();
 }
 
 /**

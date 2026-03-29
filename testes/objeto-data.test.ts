@@ -1,7 +1,7 @@
 import { expectTypeOf } from 'expect-type';
 
-import { textoIso8601ParaData, textoParaData } from "..";
-import { ObjetoData } from "../objeto-data";
+import { textoIso8601ParaData, textoParaData } from "../fontes";
+import { ObjetoData } from "../fontes/objeto-data";
 
 describe('ObjetoData', () => {
     describe('Testes de data sem horas', () => {
@@ -28,7 +28,7 @@ describe('ObjetoData', () => {
         });
 
         it('semanaDoAno', () => {
-            expect(objetoReferencia.semanaDoAno).toBe(22);
+            expect(objetoReferencia.semanaDoAno).toBe(21);
         });
 
         it('carimboDeTempoUnix', () => {

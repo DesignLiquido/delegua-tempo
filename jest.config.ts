@@ -1,9 +1,11 @@
-import type {Config} from '@jest/types';
+import type { Config } from '@jest/types';
 
-// Or async function
 export default async (): Promise<Config.InitialOptions> => {
   return {
     verbose: true,
-    modulePathIgnorePatterns: ["<rootDir>/dist/"]
+    preset: 'ts-jest',
+    testEnvironment: 'node',
+    modulePathIgnorePatterns: ['<rootDir>/dist/'],
+    coverageReporters: ['json-summary', 'lcov', 'text', 'text-summary']
   };
 };

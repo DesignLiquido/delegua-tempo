@@ -2,18 +2,17 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",
-    "target": "es2017",
-    "rootDir": ".",
-    "allowJs": true,
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "rootDir": "fontes",
     "sourceMap": true,
     "declaration": true,
-    "esModuleInterop": true
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true
   },
-  "exclude": [
-    "babel.config.js", 
-    "dist/**/*", 
-    "jest.config.ts",
-    "testes/**/*"
-  ],
-  "lib": ["es2017", "dom"]
+  "exclude": ["dist", "node_modules", "testes", "jest.config.ts"]
 }
