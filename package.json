@@ -1,6 +1,6 @@
 {
   "name": "@designliquido/delegua-tempo",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Biblioteca de manejo de tempo em português, para JavaScript e Delégua",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
