@@ -1,4 +1,19 @@
-import { agora, carimboDeTempoUnix, carimboDeTempoUnixParaData, diaDaSemana, horas, milissegundos, minutos, segundos, semanaDoAno, textoIso8601ParaData, textoParaData } from ".";
+import {
+    agora,
+    carimboDeTempoUnix,
+    carimboDeTempoUnixMilissegundos,
+    carimboDeTempoUnixParaData,
+    diaDaSemana,
+    dormir,
+    horas,
+    milissegundos,
+    minutos,
+    monotonicoMilissegundos,
+    segundos,
+    semanaDoAno,
+    textoIso8601ParaData,
+    textoParaData,
+} from ".";
 
 const definicaoAgoraOuTempo = {
     tipoRetorno: 'ObjetoData',
@@ -33,6 +48,26 @@ export const DeleguaModuloTempo = {
         tipoRetorno: 'número',
         funcao: carimboDeTempoUnix,
         argumentos: []
+    },
+    carimboDeTempoUnixMilissegundos: {
+        tipoRetorno: 'número',
+        funcao: carimboDeTempoUnixMilissegundos,
+        argumentos: []
+    },
+    monotonicoMilissegundos: {
+        tipoRetorno: 'número',
+        funcao: monotonicoMilissegundos,
+        argumentos: []
+    },
+    dormir: {
+        tipoRetorno: 'vazio',
+        funcao: dormir,
+        argumentos: [
+            {
+                nome: 'milissegundos',
+                tipo: 'número'
+            }
+        ]
     },
     carimboDeTempoUnixParaData: {
         tipoRetorno: 'ObjetoData',
