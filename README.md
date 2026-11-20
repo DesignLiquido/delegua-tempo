@@ -39,3 +39,17 @@ escreva(agora.milissegundo) // Escreve o milissegundo na saída padrão
 escreva(agora.diaDaSemana) // Escreve o dia da semana na saída padrão
 escreva(agora.semanaDoAno) // Escreve a semana do ano na saída padrão
 ```
+### Medindo intervalos e esperando
+
+```js
+var tempo = importar('tempo')
+
+var inicio = tempo.monotonicoMilissegundos()
+tempo.dormir(250) // Suspende a execução por 250 milissegundos
+var decorrido = tempo.monotonicoMilissegundos() - inicio // Pelo menos 250
+
+escreva(tempo.carimboDeTempoUnix())               // Segundos desde 01/01/1970
+escreva(tempo.carimboDeTempoUnixMilissegundos())  // Milissegundos desde 01/01/1970
+```
+
+`monotonicoMilissegundos()` usa um relógio que nunca volta no tempo (por exemplo, quando a hora do computador é ajustada), por isso é o adequado para medir intervalos e tempos limite; só a diferença entre duas leituras tem significado. Estas funções existem com os mesmos nomes no módulo `tempo` do [delegua-llvm](https://github.com/DesignLiquido/delegua-llvm).

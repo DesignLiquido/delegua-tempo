@@ -67,6 +67,39 @@ export function carimboDeTempoUnix(): number {
 }
 
 /**
+ * Retorna o Carimbo de Tempo Unix em milissegundos: o número de milissegundos
+ * desde 1º de janeiro de 1970, 00:00:00 UTC.
+ * @returns Um valor inteiro com o número de milissegundos desde 01/01/1970 até agora.
+ */
+export function carimboDeTempoUnixMilissegundos(): number {
+  return Date.now();
+}
+
+/**
+ * Retorna o valor de um relógio monotônico, em milissegundos inteiros.
+ *
+ * Ao contrário do relógio do sistema, este relógio nunca volta no tempo (por exemplo,
+ * quando a hora do computador é ajustada), por isso é o adequado para medir intervalos
+ * e tempos limite. O valor em si não tem significado; apenas a diferença entre duas
+ * leituras.
+ * @returns Milissegundos de um relógio monotônico.
+ */
+export function monotonicoMilissegundos(): number {
+  return Math.floor(performance.now());
+}
+
+/**
+ * Suspende a execução pelo número de milissegundos informado.
+ * @param {any} _ O visitante da instrução, normalmente um interpretador.
+ * @param {number} milissegundos Quantos milissegundos esperar. Valores menores ou iguais a zero não esperam.
+ */
+export async function dormir(_: any, milissegundos: number): Promise<void> {
+  const espera = Number(milissegundos);
+  if (!(espera > 0)) return;
+  await new Promise<void>((resolver) => setTimeout(resolver, espera));
+}
+
+/**
  * Retorna um objeto de data inicializado com um Carimbo de Tempo Unix.
  * @param {any} _ O visitante da instrução, normalmente um interpretador.
  * @param {number} carimboDeTempoUnix O Carimbo de Tempo Unix.
